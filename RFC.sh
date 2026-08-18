@@ -12,7 +12,6 @@ for node in $(kubectl get nodes \
 done | while read ns kind owner; do
 
   case "$kind" in
-
     StatefulSet)
       echo "$ns StatefulSet $owner"
       ;;
@@ -27,7 +26,6 @@ done | while read ns kind owner; do
         echo "$ns Deployment $deployment"
       fi
       ;;
-
   esac
 
 done | sort -u
